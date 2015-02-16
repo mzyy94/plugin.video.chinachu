@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.chinachu"
+		name="Chinachu client"
+		version="0.0.0"
+		provider-name="mzyy94">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0"/>
+		<import addon="xbmc.json" version="6.20.0"/>
+		<import addon="script.module.beautifulsoup" version="3.0.8"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary>Chinachu client</summary>
+		<description>https://github.com/mzyy94/chinachu-kodi/</description>
+		<disclaimer></disclaimer>
+	</extension>
+</addon>
