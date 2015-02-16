@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+	<!-- General -->
+	<category label="32200">
+		<setting id="server_address" type="text" label="32201" default="" />
+	</category>
+</settings>
