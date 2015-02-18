@@ -105,7 +105,7 @@ for video in data:
     if 'audio' in info:
         li.addStreamInfo('audio', info['audio'])
 
-    xbmcplugin.addDirectoryItem(handle=addon_handle, url=url, listitem=li)
+    xbmcplugin.addDirectoryItem(handle=addon_handle, url=url, listitem=li, totalItems=len(data))
 
 
 xbmcplugin.endOfDirectory(addon_handle)
