@@ -29,6 +29,7 @@ if not server_address:
 api_endpoint = urljoin(server_address, '/api/')
 
 watch_query = '?ext=m2ts'
+info = {}
 
 if not __settings__.getSetting('video_encode'):
     watch_query += '&c:v=copy'
@@ -42,6 +43,13 @@ else:
         watch_query += '&c:v=mpeg2video'
     watch_query += '&b:v=' + video_bitrate + 'k'
     watch_query += '&s=' + video_size
+    info['video'] = {
+            'codec': video_codec.replace('-','').replace('.','').lower(),
+            'width': video_size.split('x')[0],
+            'height': video_size.split('x')[1],
+            'aspect': round(16./9., 2)
+            }
+
 
 if not __settings__.getSetting('audio_encode'):
     watch_query += '&c:a=copy'
@@ -52,6 +60,7 @@ else:
     elif audio_codec == 'Vorbis':
         watch_query += '&c:a=libvorbis'
     watch_query += '&b:a=' + __settings__.getSetting('audio_bitrate') + 'k'
+    info['audio'] = {'codec': audio_codec.lower()}
 
 
 addon_handle = int(sys.argv[1])
@@ -67,7 +76,7 @@ for video in data:
     li = xbmcgui.ListItem(video['title'])
 
     startdate = datetime.datetime.fromtimestamp(video['start'] / 1000)
-    duration = ((video['end'] - video['start']) / 1000 / 60)
+    duration = ((video['end'] - video['start']) / 1000)
     fulltitle = video['title'] if 'fullTitle' not in video else video['fullTitle']
     channel = video['channel']['name']
 
@@ -82,13 +91,19 @@ for video in data:
         'director': channel,
         'plot': video['detail'],
         'year': startdate.strftime('%Y'),
-        'duration': ('%d' % duration),
+        'duration': ('%d' % (duration / 60)),
         'date': startdate.strftime('%d.%m.%Y'),
         'aired': startdate.strftime('%Y-%m-%d'),
         'dateadded': startdate.strftime('%Y-%m-%d %H:%M:%S'),
         })
     if 'episode' in video and video['episode'] > 0:
         li.setInfo('video', {'episode': video['episode']})
+
+    li.addStreamInfo('video', {'duration': duration})
+    if 'video' in info:
+        li.addStreamInfo('video', info['video'])
+    if 'audio' in info:
+        li.addStreamInfo('audio', info['audio'])
 
     xbmcplugin.addDirectoryItem(handle=addon_handle, url=url, listitem=li)
 
