@@ -65,6 +65,7 @@ else:
 
 addon_handle = int(sys.argv[1])
 
+xbmcplugin.setPluginFanart(addon_handle, color1='0xFFEB6EA5', color2='0xFFEB6EA5', color3='0xFFEB6EA5')
 xbmcplugin.setContent(addon_handle, 'episodes')
 
 response = urllib2.urlopen(api_endpoint + 'recorded.json')
