@@ -31,7 +31,7 @@ api_endpoint = urljoin(server_address, '/api/')
 watch_query = '?ext=m2ts'
 info = {}
 
-if not __settings__.getSetting('video_encode'):
+if __settings__.getSetting('video_encode') == 'false':
     watch_query += '&c:v=copy'
 else:
     video_codec = __settings__.getSetting('video_codec')
@@ -51,7 +51,7 @@ else:
             }
 
 
-if not __settings__.getSetting('audio_encode'):
+if __settings__.getSetting('audio_encode') == 'false':
     watch_query += '&c:a=copy'
 else:
     audio_codec = __settings__.getSetting('audio_codec')
