@@ -5,15 +5,11 @@
 	<string id="32201">Server address</string>
 
 	<string id="32300">Streaming</string>
-	<string id="32301">Video codec</string>
-	<string id="32302">Audio codec</string>
-	<string id="32303">Size</string>
-	<string id="32304">Video bitrate(kbps)</string>
-	<string id="32305">Audio bitrate(kbps)</string>
-	<string id="32311">Raw</string>
-	<string id="32312">H.264</string>
-	<string id="32313">MPEG-2</string>
-	<string id="32321">Raw</string>
-	<string id="32322">AAC</string>
-	<string id="32323">Vorbis</string>
+	<string id="32301">Encode video</string>
+	<string id="32302">Encode audio</string>
+	<string id="32310">Video encode options</string>
+	<string id="32320">Audio encode options</string>
+	<string id="32331">Codec</string>
+	<string id="32332">Bitrate(kbps)</string>
+	<string id="32333">Size</string>
 </strings>

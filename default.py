@@ -28,27 +28,28 @@ if not server_address:
 
 api_endpoint = urljoin(server_address, '/api/')
 
-video_codec = __settings__.getSetting('video_codec')
-audio_codec = __settings__.getSetting('audio_codec')
-
 watch_query = '?ext=m2ts'
 
-if video_codec == '0':
+if not __settings__.getSetting('video_encode'):
     watch_query += '&c:v=copy'
 else:
-    if video_codec == '1':
+    video_codec = __settings__.getSetting('video_codec')
+    video_size = __settings__.getSetting('video_size')
+    video_bitrate = __settings__.getSetting('video_bitrate')
+    if video_codec == 'H.264':
         watch_query += '&c:v=libx264'
-    elif video_codec == '2':
+    elif video_codec == 'MPEG-2':
         watch_query += '&c:v=mpeg2video'
-    watch_query += '&b:v=' + __settings__.getSetting('video_bitrate') + 'k'
-    watch_query += '&s=' + __settings__.getSetting('video_size')
+    watch_query += '&b:v=' + video_bitrate + 'k'
+    watch_query += '&s=' + video_size
 
-if audio_codec == '0':
+if not __settings__.getSetting('audio_encode'):
     watch_query += '&c:a=copy'
 else:
-    if audio_codec == '1':
+    audio_codec = __settings__.getSetting('audio_codec')
+    if audio_codec == 'AAC':
         watch_query += '&c:a=libfdk_aac'
-    elif audio_codec == '2':
+    elif audio_codec == 'Vorbis':
         watch_query += '&c:a=libvorbis'
     watch_query += '&b:a=' + __settings__.getSetting('audio_bitrate') + 'k'
 
