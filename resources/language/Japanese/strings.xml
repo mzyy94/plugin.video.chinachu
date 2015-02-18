@@ -3,4 +3,18 @@
 	<!-- Plugin settings strings -->
 	<string id="32200">基本</string>
 	<string id="32201">サーバーアドレス</string>
+
+	<string id="32300">ストリーミング</string>
+	<string id="32301">映像コーデック</string>
+	<string id="32302">音声コーデック</string>
+	<string id="32303">動画サイズ</string>
+	<string id="32304">映像ビットレート(kbps)</string>
+	<string id="32305">音声ビットレート(kbps)</string>
+	<string id="32311">無変換</string>
+	<string id="32312">H.264</string>
+	<string id="32313">MPEG-2</string>
+	<string id="32321">無変換</string>
+	<string id="32322">AAC</string>
+	<string id="32323">Vorbis</string>
+
 </strings>

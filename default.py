@@ -28,6 +28,31 @@ if not server_address:
 
 api_endpoint = urljoin(server_address, '/api/')
 
+video_codec = __settings__.getSetting('video_codec')
+audio_codec = __settings__.getSetting('audio_codec')
+
+watch_query = '?ext=m2ts'
+
+if video_codec == '0':
+    watch_query += '&c:v=copy'
+else:
+    if video_codec == '1':
+        watch_query += '&c:v=libx264'
+    elif video_codec == '2':
+        watch_query += '&c:v=mpeg2video'
+    watch_query += '&b:v=' + __settings__.getSetting('video_bitrate') + 'k'
+    watch_query += '&s=' + __settings__.getSetting('video_size')
+
+if audio_codec == '0':
+    watch_query += '&c:a=copy'
+else:
+    if audio_codec == '1':
+        watch_query += '&c:a=libfdk_aac'
+    elif audio_codec == '2':
+        watch_query += '&c:a=libvorbis'
+    watch_query += '&b:a=' + __settings__.getSetting('audio_bitrate') + 'k'
+
+
 addon_handle = int(sys.argv[1])
 
 xbmcplugin.setContent(addon_handle, 'episodes')
@@ -37,7 +62,7 @@ strjson = response.read()
 data = json.loads(strjson)
 
 for video in data:
-    url = api_endpoint + 'recorded/' + video['id'] + '/watch.m2ts?ext=m2ts&c:v=copy&c:a=copy'
+    url = api_endpoint + 'recorded/' + video['id'] + '/watch.m2ts' + watch_query
     li = xbmcgui.ListItem(video['title'])
 
     startdate = datetime.datetime.fromtimestamp(video['start'] / 1000)

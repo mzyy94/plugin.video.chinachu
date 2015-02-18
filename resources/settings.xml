@@ -4,4 +4,13 @@
 	<category label="32200">
 		<setting id="server_address" type="text" label="32201" default="" />
 	</category>
+
+	<!-- Streaming -->
+	<category label="32300">
+		<setting id="video_codec" type="enum" label="32301" lvalues="32311|32312|32313" default="32311" />
+		<setting id="audio_codec" type="enum" label="32302" lvalues="32321|32322|32323" default="32321" />
+		<setting id="video_size" type="labelenum" label="32303" values="320x180|640x360|960x540|1024x576|1280x720|1920x1080" default="1280x720" enable="!eq(-2,0)" />
+		<setting id="video_bitrate" type="slider" label="32304" range="256,256,3072" default="3072" option="int" enable="!eq(-3,0)" />
+		<setting id="audio_bitrate" type="slider" label="32305" range="32,32,192" default="192" option="int" enable="!eq(-3,0)" />
+	</category>
 </settings>
