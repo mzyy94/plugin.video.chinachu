@@ -10,6 +10,7 @@ import time
 import simplejson as json
 import urllib2
 from urlparse import urljoin
+from threading import Thread
 
 __settings__ = xbmcaddon.Addon('plugin.video.chinachu')
 
@@ -27,6 +28,21 @@ if not server_address:
     server_address = __settings__.getSetting('server_address')
 
 api_endpoint = urljoin(server_address, '/api/')
+
+thumbnail_cache_dir = os.path.join(xbmc.translatePath('special://masterprofile/'), 'addon_data', os.path.basename(__settings__.getAddonInfo('path')), 'thumbnail/')
+if not os.path.exists(thumbnail_cache_dir):
+    os.makedirs(thumbnail_cache_dir)
+
+def getThumbnail(video_id, sec):
+    thumbnail_path = thumbnail_cache_dir + video_id + '.jpg'
+    with open(thumbnail_path, "wb") as thumbnail_file:
+        try:
+            thumbnail_data = urllib2.urlopen(api_endpoint + 'recorded/' + video_id + '/preview.jpg?pos=' + str(sec))
+        except:
+            xbmc.log('No thumbnail of %s' % video_id, level=xbmc.LOGWARNING)
+        else:
+            thumbnail_file.write(thumbnail_data.read())
+
 
 watch_query = '?ext=m2ts'
 info = {}
@@ -72,6 +88,8 @@ response = urllib2.urlopen(api_endpoint + 'recorded.json')
 strjson = response.read()
 data = json.loads(strjson)
 
+get_thumb_queue = []
+
 for video in data:
     url = api_endpoint + 'recorded/' + video['id'] + '/watch.m2ts' + watch_query
     li = xbmcgui.ListItem(video['title'])
@@ -80,6 +98,13 @@ for video in data:
     duration = ((video['end'] - video['start']) / 1000)
     fulltitle = video['title'] if 'fullTitle' not in video else video['fullTitle']
     channel = video['channel']['name']
+
+    thumbnail_path = thumbnail_cache_dir + video['id'] + '.jpg'
+    if not os.path.exists(thumbnail_path):
+        get_thumb_queue.append(Thread(target=getThumbnail, args=(video['id'], duration / 10)))
+    li.setIconImage(thumbnail_path)
+    li.setThumbnailImage(thumbnail_path)
+    li.setArt({'poster': thumbnail_path, 'fanart': thumbnail_path, 'landscape': thumbnail_path, 'thumb': thumbnail_path})
 
     li.setInfo('video', {
         'title': fulltitle,
@@ -108,6 +133,22 @@ for video in data:
 
     xbmcplugin.addDirectoryItem(handle=addon_handle, url=url, listitem=li, totalItems=len(data))
 
-
 xbmcplugin.endOfDirectory(addon_handle)
+
+queue_length = len(get_thumb_queue)
+__settings__.setSetting('thumbnail_downloding', str(queue_length))
+
+progress = xbmcgui.DialogProgressBG()
+progress.create(__plugin__, 'Downloading thumbnails...')
+progress.update(0)
+for i, q in enumerate(get_thumb_queue):
+    q.start()
+    progress.update(i * 100 / queue_length, message=('Downloading thumbnails... (%d/%d)' % (i + 1, queue_length)))
+    q.join()
+    xbmc.sleep(3000)
+    thumbnail_downloding = int(__settings__.getSetting('thumbnail_downloding'))
+    if thumbnail_downloding < queue_length:
+        break
+progress.close()
+
 sys.modules.clear()
