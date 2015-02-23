@@ -147,7 +147,7 @@ if __name__ == '__main__':
         if 'audio' in info:
             li.addStreamInfo('audio', info['audio'])
 
-        li.addContextMenuItems([(xbmc.getLocalizedString(117), 'RunScript(special://home/addons/plugin.video.chinachu/utility.py, delete_recorded, %s, %s)' % (video['title'], video['id']))])
+        li.addContextMenuItems([(xbmc.getLocalizedString(117), 'RunScript(%s/utility.py, delete_recorded, "%s", %s)' % (__settings__.getAddonInfo('path'), video['title'], video['id']))])
 
         xbmcplugin.addDirectoryItem(handle=addon_handle, url=url, listitem=li, totalItems=len(data))
 

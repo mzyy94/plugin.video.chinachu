@@ -21,7 +21,7 @@
 	<!-- Thumbnail -->
 	<category label="30400">
 		<setting id="show_thumbnail" type="bool" label="30401" default="false"/>
-		<setting type="action" label="30402" action="RunScript(special://home/addons/plugin.video.chinachu/utility.py, clear_thumbnail_cache)"/>
+		<setting type="action" label="30402" action="RunScript(../utility.py, clear_thumbnail_cache)"/>
 	</category>
 
 	<!-- Movie Information -->
