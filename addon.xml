@@ -14,7 +14,10 @@
 		<platform>all</platform>
 		<license>GPL v2.0</license>
 		<summary>Chinachu client</summary>
-		<description>https://github.com/mzyy94/plugin.video.chinachu/</description>
+		<source>https://github.com/mzyy94/plugin.video.chinachu/</source>
+		<website>https://github.com/mzyy94/plugin.video.chinachu/wiki</website>
+		<forum>https://github.com/mzyy94/plugin.video.chinachu/issues</forum>
+		<language>en ja</language>
 		<disclaimer></disclaimer>
 	</extension>
 </addon>
