@@ -1,0 +1,78 @@
+# XBMC Media Center language file
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC-Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: 2015-02-23 08:11+0000\n"
+"PO-Revision-Date: 2015-02-23 17:15+0900\n"
+"Last-Translator: Yuki MIZUNO <mizuyuu0904@gmail.com>\n"
+"Language-Team: LANGUAGE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#Plugin settings strings
+
+msgctxt "#32200"
+msgid "General"
+msgstr ""
+
+msgctxt "#32201"
+msgid "Server address"
+msgstr ""
+
+#empty strings from id 32202 to 32299
+
+msgctxt "#32300"
+msgid "Streaming"
+msgstr ""
+
+msgctxt "#32301"
+msgid "Encode video"
+msgstr ""
+
+msgctxt "#32302"
+msgid "Encode audio"
+msgstr ""
+
+#empty strings from id 32303 to 32309
+
+msgctxt "#32310"
+msgid "Video encode options"
+msgstr ""
+
+#empty strings from id 32311 to 32319
+
+msgctxt "#32320"
+msgid "Audio encode options"
+msgstr ""
+
+#empty strings from id 32321 to 32330
+
+msgctxt "#32331"
+msgid "Codec"
+msgstr ""
+
+msgctxt "#32332"
+msgid "Bitrate(kbps)"
+msgstr ""
+
+msgctxt "#32333"
+msgid "Size"
+msgstr ""
+
+#empty strings from id 32334 to 32399
+
+msgctxt "#32400"
+msgid "Thumbnail"
+msgstr ""
+
+msgctxt "#32401"
+msgid "Show thumbnail"
+msgstr ""
+
+msgctxt "#32402"
+msgid "Clear thumbnail cache"
+msgstr ""
