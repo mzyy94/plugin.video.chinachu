@@ -43,11 +43,9 @@ if __name__ == '__main__' and len(sys.argv) >= 2:
             opener = urllib2.build_opener(urllib2.HTTPHandler)
 
             print 'Deleting recorded file...'
-            xbmc.executebuiltin('XBMC.StopScript(plugin.video.chinachu)')
             progress = xbmcgui.DialogProgress()
             progress.create(__plugin__, 'Deleting recorded file...')
             progress.update(0)
-
 
             try:
                 req = urllib2.Request(api_endpoint + 'recorded/' + file_id + '/file.m2ts')
