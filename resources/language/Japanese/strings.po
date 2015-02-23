@@ -13,66 +13,66 @@ msgstr ""
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-msgctxt "#32200"
+msgctxt "#30200"
 msgid "General"
 msgstr "基本"
 
-msgctxt "#32201"
+msgctxt "#30201"
 msgid "Server address"
 msgstr "サーバーアドレス"
 
-msgctxt "#32300"
+msgctxt "#30300"
 msgid "Streaming"
 msgstr "ストリーミング"
 
-msgctxt "#32301"
+msgctxt "#30301"
 msgid "Encode video"
 msgstr "映像エンコード"
 
-msgctxt "#32302"
+msgctxt "#30302"
 msgid "Encode audio"
 msgstr "音声エンコード"
 
-msgctxt "#32310"
+msgctxt "#30310"
 msgid "Video encode options"
 msgstr "映像エンコードオプション"
 
-msgctxt "#32320"
+msgctxt "#30320"
 msgid "Audio encode options"
 msgstr "音声エンコードオプション"
 
-msgctxt "#32331"
+msgctxt "#30331"
 msgid "Codec"
 msgstr "コーデック"
 
-msgctxt "#32332"
+msgctxt "#30332"
 msgid "Bitrate(kbps)"
 msgstr "ビットレート(kbps)"
 
-msgctxt "#32333"
+msgctxt "#30333"
 msgid "Size"
 msgstr "サイズ"
 
-msgctxt "#32400"
+msgctxt "#30400"
 msgid "Thumbnail"
 msgstr "サムネイル"
 
-msgctxt "#32401"
+msgctxt "#30401"
 msgid "Show thumbnail"
 msgstr "サムネイルを表示する"
 
-msgctxt "#32402"
+msgctxt "#30402"
 msgid "Clear thumbnail cache"
 msgstr "キャッシュを削除"
 
-msgctxt "#32500"
+msgctxt "#30500"
 msgid "Movie Information"
 msgstr "動画情報"
 
-msgctxt "#32501"
+msgctxt "#30501"
 msgid "Force set episode number"
 msgstr "エピソード番号を強制的に指定"
 
-msgctxt "#32502"
+msgctxt "#30502"
 msgid "Show channel name in"
 msgstr "チャンネル名を表示する場所："

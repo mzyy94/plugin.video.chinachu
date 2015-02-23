@@ -15,78 +15,78 @@ msgstr ""
 
 #Plugin settings strings
 
-msgctxt "#32200"
+msgctxt "#30200"
 msgid "General"
 msgstr ""
 
-msgctxt "#32201"
+msgctxt "#30201"
 msgid "Server address"
 msgstr ""
 
-#empty strings from id 32202 to 32299
+#empty strings from id 30202 to 30299
 
-msgctxt "#32300"
+msgctxt "#30300"
 msgid "Streaming"
 msgstr ""
 
-msgctxt "#32301"
+msgctxt "#30301"
 msgid "Encode video"
 msgstr ""
 
-msgctxt "#32302"
+msgctxt "#30302"
 msgid "Encode audio"
 msgstr ""
 
-#empty strings from id 32303 to 32309
+#empty strings from id 30303 to 30309
 
-msgctxt "#32310"
+msgctxt "#30310"
 msgid "Video encode options"
 msgstr ""
 
-#empty strings from id 32311 to 32319
+#empty strings from id 30311 to 30319
 
-msgctxt "#32320"
+msgctxt "#30320"
 msgid "Audio encode options"
 msgstr ""
 
-#empty strings from id 32321 to 32330
+#empty strings from id 30321 to 30330
 
-msgctxt "#32331"
+msgctxt "#30331"
 msgid "Codec"
 msgstr ""
 
-msgctxt "#32332"
+msgctxt "#30332"
 msgid "Bitrate(kbps)"
 msgstr ""
 
-msgctxt "#32333"
+msgctxt "#30333"
 msgid "Size"
 msgstr ""
 
-#empty strings from id 32334 to 32399
+#empty strings from id 30334 to 30399
 
-msgctxt "#32400"
+msgctxt "#30400"
 msgid "Thumbnail"
 msgstr ""
 
-msgctxt "#32401"
+msgctxt "#30401"
 msgid "Show thumbnail"
 msgstr ""
 
-msgctxt "#32402"
+msgctxt "#30402"
 msgid "Clear thumbnail cache"
 msgstr ""
 
-#empty strings from id 32403 to 32499
+#empty strings from id 30403 to 30499
 
-msgctxt "#32500"
+msgctxt "#30500"
 msgid "Movie Information"
 msgstr ""
 
-msgctxt "#32501"
+msgctxt "#30501"
 msgid "Force set episode number"
 msgstr ""
 
-msgctxt "#32502"
+msgctxt "#30502"
 msgid "Show channel name in"
 msgstr ""
