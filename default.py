@@ -88,6 +88,7 @@ response = urllib2.urlopen(api_endpoint + 'recorded.json')
 strjson = response.read()
 data = json.loads(strjson)
 
+show_thumbnail = __settings__.getSetting('show_thumbnail') == 'true'
 get_thumb_queue = []
 
 for video in data:
@@ -99,12 +100,13 @@ for video in data:
     fulltitle = video['title'] if 'fullTitle' not in video else video['fullTitle']
     channel = video['channel']['name']
 
-    thumbnail_path = thumbnail_cache_dir + video['id'] + '.jpg'
-    if not os.path.exists(thumbnail_path):
-        get_thumb_queue.append(Thread(target=getThumbnail, args=(video['id'], duration / 10)))
-    li.setIconImage(thumbnail_path)
-    li.setThumbnailImage(thumbnail_path)
-    li.setArt({'poster': thumbnail_path, 'fanart': thumbnail_path, 'landscape': thumbnail_path, 'thumb': thumbnail_path})
+    if show_thumbnail:
+        thumbnail_path = thumbnail_cache_dir + video['id'] + '.jpg'
+        if not os.path.exists(thumbnail_path):
+            get_thumb_queue.append(Thread(target=getThumbnail, args=(video['id'], duration / 10)))
+        li.setIconImage(thumbnail_path)
+        li.setThumbnailImage(thumbnail_path)
+        li.setArt({'poster': thumbnail_path, 'fanart': thumbnail_path, 'landscape': thumbnail_path, 'thumb': thumbnail_path})
 
     li.setInfo('video', {
         'title': fulltitle,
@@ -135,20 +137,21 @@ for video in data:
 
 xbmcplugin.endOfDirectory(addon_handle)
 
-queue_length = len(get_thumb_queue)
-__settings__.setSetting('thumbnail_downloding', str(queue_length))
+if show_thumbnail:
+    queue_length = len(get_thumb_queue)
+    __settings__.setSetting('thumbnail_downloding', str(queue_length))
 
-progress = xbmcgui.DialogProgressBG()
-progress.create(__plugin__, 'Downloading thumbnails...')
-progress.update(0)
-for i, q in enumerate(get_thumb_queue):
-    q.start()
-    progress.update(i * 100 / queue_length, message=('Downloading thumbnails... (%d/%d)' % (i + 1, queue_length)))
-    q.join()
-    xbmc.sleep(3000)
-    thumbnail_downloding = int(__settings__.getSetting('thumbnail_downloding'))
-    if thumbnail_downloding < queue_length:
-        break
-progress.close()
+    progress = xbmcgui.DialogProgressBG()
+    progress.create(__plugin__, 'Downloading thumbnails...')
+    progress.update(0)
+    for i, q in enumerate(get_thumb_queue):
+        q.start()
+        progress.update(i * 100 / queue_length, message=('Downloading thumbnails... (%d/%d)' % (i + 1, queue_length)))
+        q.join()
+        xbmc.sleep(3000)
+        thumbnail_downloding = int(__settings__.getSetting('thumbnail_downloding'))
+        if thumbnail_downloding < queue_length:
+            break
+    progress.close()
 
 sys.modules.clear()

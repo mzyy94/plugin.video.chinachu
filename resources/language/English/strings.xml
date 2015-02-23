@@ -12,4 +12,7 @@
 	<string id="32331">Codec</string>
 	<string id="32332">Bitrate(kbps)</string>
 	<string id="32333">Size</string>
+
+	<string id="32400">Thumbnail</string>
+	<string id="32401">Show thumbnail</string>
 </strings>
