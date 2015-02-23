@@ -76,3 +76,17 @@ msgstr ""
 msgctxt "#32402"
 msgid "Clear thumbnail cache"
 msgstr ""
+
+#empty strings from id 32403 to 32499
+
+msgctxt "#32500"
+msgid "Movie Information"
+msgstr ""
+
+msgctxt "#32501"
+msgid "Force set episode number"
+msgstr ""
+
+msgctxt "#32502"
+msgid "Show channel name in"
+msgstr ""

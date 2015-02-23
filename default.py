@@ -45,6 +45,18 @@ if __name__ == '__main__':
                 thumbnail_file.write(thumbnail_data.read())
 
 
+    force_set_episode = __settings__.getSetting('force_set_episode') == 'true'
+    channel_field = __settings__.getSetting('channel_field')
+
+    if channel_field == xbmc.getLocalizedString(20339).encode('utf_8'):
+        ch_field = 'director'
+    elif channel_field == xbmc.getLocalizedString(20417).encode('utf_8'):
+        ch_field = 'writer'
+    #elif channel_field == xbmc.getLocalizedString(572).encode('utf_8'):
+    else:
+        ch_field = 'studio'
+
+
     watch_query = '?ext=m2ts'
     info = {}
 
@@ -116,8 +128,7 @@ if __name__ == '__main__':
             'tvshowtitle' : video['title'],
             'album' : video['title'],
             'genre': video['category'],
-            'studio': channel,
-            'director': channel,
+            ch_field: channel,
             'plot': video['detail'],
             'year': startdate.strftime('%Y'),
             'duration': ('%d' % (duration / 60)),
@@ -127,6 +138,8 @@ if __name__ == '__main__':
             })
         if 'episode' in video and video['episode'] > 0:
             li.setInfo('video', {'episode': video['episode']})
+        elif force_set_episode:
+            li.setInfo('video', {'episode': 1})
 
         li.addStreamInfo('video', {'duration': duration})
         if 'video' in info:

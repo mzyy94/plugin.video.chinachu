@@ -64,3 +64,15 @@ msgstr "サムネイルを表示する"
 msgctxt "#32402"
 msgid "Clear thumbnail cache"
 msgstr "キャッシュを削除"
+
+msgctxt "#32500"
+msgid "Movie Information"
+msgstr "動画情報"
+
+msgctxt "#32501"
+msgid "Force set episode number"
+msgstr "エピソード番号を強制的に指定"
+
+msgctxt "#32502"
+msgid "Show channel name in"
+msgstr "チャンネル名を表示する場所："
