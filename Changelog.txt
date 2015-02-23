@@ -1,3 +1,8 @@
+v0.0.3
+- File deleting support
+- Add some movie information options
+- Bug fix
+
 v0.0.2
 - Video thumbnail support
 - Audio/video transcode streaming support
