@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
     api_endpoint = urljoin(server_address, '/api/')
 
-    thumbnail_cache_dir = os.path.join(xbmc.translatePath('special://masterprofile/'), 'addon_data', os.path.basename(__settings__.getAddonInfo('path')), 'thumbnail/')
+    thumbnail_cache_dir = os.path.join(xbmc.translatePath('special://thumbnails/'), os.path.basename(__settings__.getAddonInfo('path')), './')
     if not os.path.exists(thumbnail_cache_dir):
         os.makedirs(thumbnail_cache_dir)
 

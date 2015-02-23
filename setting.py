@@ -18,7 +18,7 @@ if __name__ == '__main__':
     if sys.argv[1] == 'clear_thumbnail_cache':
         print 'Deleting thumbnail cache...'
         xbmc.executebuiltin('XBMC.StopScript(plugin.video.chinachu)')
-        thumbnail_cache_dir = os.path.join(xbmc.translatePath('special://masterprofile/'), 'addon_data', os.path.basename(__settings__.getAddonInfo('path')), 'thumbnail/')
+        thumbnail_cache_dir = os.path.join(xbmc.translatePath('special://thumbnails/'), os.path.basename(__settings__.getAddonInfo('path')), './')
         progress = xbmcgui.DialogProgress()
         progress.create(__plugin__, 'Deleting thumbnails...')
         progress.update(0)
