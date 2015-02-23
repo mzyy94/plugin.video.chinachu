@@ -1,6 +1,6 @@
 v0.0.2
 - Video thumbnail support
-- Audoi/video transcode streaming support
+- Audio/video transcode streaming support
 - Bug fix
 
 v0.0.1
