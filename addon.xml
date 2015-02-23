@@ -13,7 +13,7 @@
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
 		<summary>Chinachu client</summary>
-		<description>https://github.com/mzyy94/chinachu-kodi/</description>
+		<description>https://github.com/mzyy94/plugin.video.chinachu/</description>
 		<disclaimer></disclaimer>
 	</extension>
 </addon>
