@@ -13,7 +13,7 @@ __author__ = __settings__.getAddonInfo('author')
 __version__ = __settings__.getAddonInfo('version')
 
 if __name__ == '__main__':
-    print "'%s: ver %s' setting manager" % (__plugin__, __version__)
+    print "'%s: ver %s' utility" % (__plugin__, __version__)
 
     if sys.argv[1] == 'clear_thumbnail_cache':
         print 'Deleting thumbnail cache...'
