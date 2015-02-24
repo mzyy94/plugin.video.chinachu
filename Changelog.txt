@@ -1,3 +1,7 @@
+v0.1.0
+Public release
+- Change setting menu label
+
 v0.0.3
 - File deleting support
 - Add some movie information options
