@@ -6,6 +6,9 @@ Chinachu client add-on for Kodi
 2. Launch Kodi and open settings
 3. Go Add-ons -> Install from zip file
 4. Select the zip file you have donwloaded 
+5. Go Add-ons -> Enabled Add-ons
+6. Find Chinachu client
+7. Open configuratoin window and configure settings
 
 # Features
 - Movie informations from Chinachu
