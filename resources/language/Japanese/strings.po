@@ -18,8 +18,8 @@ msgid "General"
 msgstr "基本"
 
 msgctxt "#30201"
-msgid "Server address"
-msgstr "サーバーアドレス"
+msgid "Chinachu WUI URL"
+msgstr "Chinachu WUIのURL"
 
 msgctxt "#30300"
 msgid "Streaming"

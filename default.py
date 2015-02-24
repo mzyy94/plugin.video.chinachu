@@ -23,12 +23,12 @@ if __name__ == '__main__':
     print "'%s: ver %s' initialized" % (__plugin__, __version__)
 
 
-    server_address = __settings__.getSetting('server_address')
-    if not server_address:
+    server_url = __settings__.getSetting('server_url')
+    if not server_url:
         __settings__.openSettings()
-        server_address = __settings__.getSetting('server_address')
+        server_url = __settings__.getSetting('server_url')
 
-    api_endpoint = urljoin(server_address, '/api/')
+    api_endpoint = urljoin(server_url, '/api/')
 
     thumbnail_cache_dir = os.path.join(xbmc.translatePath('special://thumbnails/'), os.path.basename(__settings__.getAddonInfo('path')), './')
     if not os.path.exists(thumbnail_cache_dir):

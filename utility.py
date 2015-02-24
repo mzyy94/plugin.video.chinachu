@@ -38,8 +38,8 @@ if __name__ == '__main__' and len(sys.argv) >= 2:
 
         dialog = xbmcgui.Dialog()
         if dialog.yesno(xbmc.getLocalizedString(122).encode('utf_8'), xbmc.getLocalizedString(433).encode('utf_8') % file_name, yeslabel=xbmc.getLocalizedString(117)):
-            server_address = __settings__.getSetting('server_address')
-            api_endpoint = urljoin(server_address, '/api/')
+            server_url = __settings__.getSetting('server_url')
+            api_endpoint = urljoin(server_url, '/api/')
             opener = urllib2.build_opener(urllib2.HTTPHandler)
 
             print 'Deleting recorded file...'

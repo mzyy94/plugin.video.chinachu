@@ -20,7 +20,7 @@ msgid "General"
 msgstr ""
 
 msgctxt "#30201"
-msgid "Server address"
+msgid "Chinachu WUI URL"
 msgstr ""
 
 #empty strings from id 30202 to 30299
