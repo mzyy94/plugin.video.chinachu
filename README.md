@@ -1,3 +1,9 @@
+# DEPRECATION WARNING
+
+This project will not be maintained any longer.
+Please use [pvr.chinachu](https://github.com/mzyy94/pvr.chinachu) instead.
+
+
 # plugin.video.chinachu
 Chinachu client add-on for Kodi
 
